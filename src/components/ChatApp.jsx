@@ -36,7 +36,7 @@ const MODELS = [
   },
   {
     id: "gemma-2-2b-it-q4f16_1-MLC",
-    label: "Gemma — Good",
+    label: "Gemma — Balanced",
   },
 ];
 
