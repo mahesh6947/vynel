@@ -146,35 +146,17 @@ Use Clear chat to reset context
 ⚠️ If WebGPU is unavailable, the app will fail to load models.
 
 
-Project Structure
-src/
-├─ components/
-│  ├─ ChatApp.jsx      # Main UI + logic
-│  ├─ ChatInput.jsx   # Input + send/stop
-│  └─ Header.jsx      # App header
-│
-├─ inference/
-│  ├─ index.js        # WebGPU inference manager
-│  └─ webllm.js       # WebLLM / MLC engine
-│
-├─ main.jsx
-├─ App.jsx
-
-🔐 Privacy
+## 🔐 Privacy
 
 No backend
-
 No cloud inference
-
 No API keys
-
 No telemetry
-
 Model files are downloaded locally
 
 Everything runs entirely on your machine.
 
-⭐ Final Note
+## ⭐ Final Note
 
 Vynel exists to prove that serious, private, local AI in the browser is already possible.
 
