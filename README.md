@@ -87,19 +87,14 @@ WebGPU **must** be fully enabled in Chrome.
 
 ---
 
-### Step 3: Verify WebGPU (Optional)
-
-Open **DevTools → Console** and run:
-
-```js
-navigator.gpu
 
 
-Installation (from scratch)
+
+## Installation (from scratch)
 
 These steps assume nothing is installed on the system.
 
-Step 1: Install Node.js
+## Step 1: Install Node.js
 
 Install Node.js 20+
 👉 https://nodejs.org/
@@ -108,33 +103,79 @@ Verify installation:
 
 node -v
 npm -v
-Step 2: Clone the Repository
+
+## Step 2: Clone the Repository
 git clone https://github.com/<your-username>/vynel.git
 cd vynel
 
-Step 3: Install Dependencies
+## Step 3: Install Dependencies
 npm install
 
-
 Installs:
-
 React
-
 Vite
-
 @mlc-ai/web-llm
-
 react-markdown
-
 remark-gfm
 
-Step 4: Start the Development Server
+## Step 4: Start the Development Server
 npm run dev
 
-
-You should see:
+##You should see:
 
 Local: http://localhost:5173/
 
 
-Open the URL in Google Chrome.
+## Open the URL in Google Chrome.
+
+
+## 🚀 Usage
+
+Open Vynel in Chrome
+
+Select a model from the dropdown
+
+Start chatting
+
+Responses stream in real time
+
+Use Stop to interrupt generation
+
+Use Clear chat to reset context
+
+⚠️ If WebGPU is unavailable, the app will fail to load models.
+
+
+Project Structure
+src/
+├─ components/
+│  ├─ ChatApp.jsx      # Main UI + logic
+│  ├─ ChatInput.jsx   # Input + send/stop
+│  └─ Header.jsx      # App header
+│
+├─ inference/
+│  ├─ index.js        # WebGPU inference manager
+│  └─ webllm.js       # WebLLM / MLC engine
+│
+├─ main.jsx
+├─ App.jsx
+
+🔐 Privacy
+
+No backend
+
+No cloud inference
+
+No API keys
+
+No telemetry
+
+Model files are downloaded locally
+
+Everything runs entirely on your machine.
+
+⭐ Final Note
+
+Vynel exists to prove that serious, private, local AI in the browser is already possible.
+
+If you like this project, consider starring the repo ⭐
