@@ -100,6 +100,8 @@ export default function ChatApp() {
   }
 
   async function handleSend(text) {
+    console.log("[Perf] handleSend called");
+
     if (!text.trim() || isStreaming) return;
 
     const userMessage = { role: "user", content: text };
