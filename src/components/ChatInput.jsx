@@ -13,17 +13,12 @@ export default function ChatInput({ onSend, onStop, isStreaming }) {
     }
   }, [text]);
 
- function handleKeyDown(e) {
-  if (
-    e.key === "Enter" &&
-    !e.shiftKey &&
-    !e.nativeEvent.isComposing
-  ) {
-    e.preventDefault();
-    handleSend();
+  function handleKeyDown(e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
   }
-}
-
 
   function handleSend() {
     if (!text.trim() || isStreaming) return;
