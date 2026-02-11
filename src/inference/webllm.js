@@ -6,7 +6,7 @@ let modelId = null;
 
 export async function setWebLLMModel(newModelId) {
   if (modelId !== newModelId) {
-    engine = null; // force reload
+    engine = null;
     modelId = newModelId;
   }
 }
@@ -28,13 +28,17 @@ export async function streamChat({ messages, onToken, onDone, onError }) {
     const response = await engine.chat.completions.create({
       messages,
       stream: true,
-      temperature: 0.7
+      temperature: 0.4,
+      max_tokens: 1024   // 🚀 Controlled cap for performance
     });
 
     for await (const chunk of response) {
       if (abortRequested) break;
-      const token = chunk.choices[0]?.delta?.content;
-      if (token) onToken(token);
+
+      const choice = chunk.choices[0];
+      if (choice && choice.delta && choice.delta.content) {
+        onToken(choice.delta.content);
+      }
     }
 
     onDone();
