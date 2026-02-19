@@ -28,7 +28,7 @@ export async function streamChat({ messages, onToken, onDone, onError }) {
     const response = await engine.chat.completions.create({
       messages,
       stream: true,
-      temperature: 0.4,
+      temperature: 0.7,
       max_tokens: 1024   // 🚀 Controlled cap for performance
     });
 

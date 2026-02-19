@@ -34,6 +34,13 @@ export default function Header() {
           </div>
         </div>
 
+        <div style={styles.right}>
+    <div style={styles.caption}>
+      Currently runs on Windows systems with Dedicated GPU only
+    </div>
+  </div>
+
+
         
       </div>
     </>
